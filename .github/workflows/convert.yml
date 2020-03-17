@@ -1,18 +1,18 @@
-name: Long Usage
+name: Convert and Upload
 
 on: push
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
-    steps:      
-      - run: echo "foo" > input.txt # create an example file
-      - uses: docker://pandoc/core:2.9
+    steps:
+      - name: convert
+        uses: docker://pandoc/core:2.9
         with:
           args: >- # allows you to break string into multiple lines
             --standalone
             --output=index.html
-            input.txt
+            content.md
             
       - name: upload
         uses: actions/upload-artifact@v1
@@ -20,4 +20,3 @@ jobs:
           name: pub
           path: index.html
         
-            
