@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - run: ls -alh
       - name: convert
-        uses: docker://pandoc/core:2.9
+        uses: docker://pandoc/latex:2.9
         with:
           args: >- # allows you to break string into multiple lines
             --standalone
