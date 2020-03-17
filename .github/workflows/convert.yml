@@ -6,14 +6,15 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v1
+      - run: ls -alh
       - name: convert
         uses: docker://pandoc/core:2.9
         with:
           args: >- # allows you to break string into multiple lines
             --standalone
             --output=index.html
-            content.md
-            
+            content.md      
       - name: upload
         uses: actions/upload-artifact@v1
         with:
