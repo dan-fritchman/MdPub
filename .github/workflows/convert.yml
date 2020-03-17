@@ -13,7 +13,14 @@ jobs:
         with:
           args: >- # allows you to break string into multiple lines
             --standalone
-            --output=index.html
+            --from=markdown
+            --to=latex
+            --template=template.latex
+            --filter=pandoc-crossref
+            --filter=pandoc-citeproc
+            --bibliography=bibliography.bib
+            --csl=bibliography.csl
+            --output=article.pdf
             content.md      
       - name: upload
         uses: actions/upload-artifact@v1
