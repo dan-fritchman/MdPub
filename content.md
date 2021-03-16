@@ -3,10 +3,10 @@
 title: Basic Title
 subtitle: Very Important Subtitle
 author:
-  - name: Miroslav Shubernetskiy
+  - name: Ned, Chief 
     affiliation: GameChanger
-    location: New York
-    email: example@gc.com
+    location: Softball Practice
+    email: ned@ned.com
 numbersections: yes
 lang: en
 abstract: |
